@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/venkataramkishore/vue-spa.svg?branch=master)](https://travis-ci.org/venkataramkishore/vue-spa)
+
+
 # vue-spa
 A simple demo app how to utilise vue.js 
 
