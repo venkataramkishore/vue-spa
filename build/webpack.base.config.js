@@ -3,7 +3,8 @@ const path = require('path')
 const webpackConfig = {
   target: 'web',
   entry: {
-    app: path.resolve(__dirname, '../src/client-entry.js')
+    app: path.resolve(__dirname, '../src/client-entry.js'),
+    vendor: ['vue', 'vuex', 'vue-router', 'axios']
   },
   module: {
     rules: [

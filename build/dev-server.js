@@ -4,16 +4,18 @@ const clientConfig = require('./webpack.client.config')
 const serverConfig = require('./webpack.server.config')
 const MFS = require('memory-fs')
 const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 module.exports = function setupDevServer (app, onUpdate) {
   clientConfig.entry.app = [
     'webpack-hot-middleware/client',
     clientConfig.entry.app
   ]
-  //   clientConfig.plugins.push([
-  //     new webpack.HotModuleReplacementPlugin(),
-  //     new webpack.NoEmitOnErrorsPlugin()
-  //   ])
+  clientConfig.plugins.push([
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new ExtractTextWebpackPlugin('assets/css/styles.css')
+  ])
 
   const clientCompiler = webpack(clientConfig)
 
