@@ -3,6 +3,8 @@
         "mocha": true
     },
     "globals": {
+        "describe": true,
+        "fdescribe": true,
         "expect": true,
         "sinon" : true
     }

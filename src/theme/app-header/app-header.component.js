@@ -4,7 +4,7 @@ export default {
   data () {
     return {
       navItems: [
-        { id: 'home', name: 'Home', route: '/', visible: true },
+        { id: 'home', name: 'Home', route: '/home', visible: true },
         { id: 'front-end', name: 'Front-end', route: '/category/front-end', visible: true },
         { id: 'mobile', name: 'Mobile', route: '/category/mobile', visible: true },
         { id: 'sections', name: 'Sections', route: '/sections', visible: true },

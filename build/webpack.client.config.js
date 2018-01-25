@@ -1,8 +1,13 @@
 const base = require('./webpack.base.config')
 const webpack = require('webpack')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 const config = Object.assign({}, base, {
-  plugins: (base.plugins || []).concat([
+  plugins: (base.plugins || [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new ExtractTextWebpackPlugin('assets/css/styles.css')
+  ]).concat([
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'assets/js/[name].js'

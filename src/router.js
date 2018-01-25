@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // For load early
+import Home from './home/Home.vue'
 import Login from './login/Login.vue'
 import Category from './theme/category/Category.vue'
 import NotFound from './not-found/NotFound.vue'
@@ -19,13 +20,16 @@ const router = new VueRouter({
   scrollBehavior: () => ({y: 0}),
   routes: [
     {
+      path: '/home', component: Home
+    },
+    {
       path: '/login', component: Login
     },
     {
       path: '/category/:id', component: Category
     },
     {
-      path: '/', redirect: '/category'
+      path: '/', redirect: '/home'
     },
     {
       path: '*', component: NotFound
